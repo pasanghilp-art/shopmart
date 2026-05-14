@@ -9,7 +9,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/cart', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get('https://shopmart-foyf.onrender.com/api/cart', { headers: { Authorization: `Bearer ${token}` } });
       setCart(res.data);
       setLoading(false);
     } catch { setLoading(false); }
@@ -18,13 +18,13 @@ const Cart = () => {
   useEffect(() => { fetchCart(); }, []);
 
   const removeItem = async (id) => {
-    await axios.delete(`http://localhost:5000/api/cart/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    await axios.delete(`https://shopmart-foyf.onrender.com/api/cart/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     fetchCart();
   };
 
   const placeOrder = async () => {
     try {
-      await axios.post('http://localhost:5000/api/orders', {}, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.post('https://shopmart-foyf.onrender.com/api/orders', {}, { headers: { Authorization: `Bearer ${token}` } });
       alert('Order placed successfully!');
       fetchCart();
     } catch { alert('Error placing order'); }

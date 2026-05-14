@@ -11,7 +11,7 @@ const Orders = () => {
 
   useEffect(() => {
     if (!token) { navigate('/login'); return; }
-    axios.get('http://localhost:5000/api/orders/my', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get('https://shopmart-foyf.onrender.com/api/orders/my', { headers: { Authorization: `Bearer ${token}` } })
       .then(res => { setOrders(res.data); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);

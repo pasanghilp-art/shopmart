@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
   const addToCart = async () => {
     if (!token) return alert('Please login first!');
     try {
-      await axios.post('http://localhost:5000/api/cart',
+      await axios.post('https://shopmart-foyf.onrender.com/api/cart',
         { product_id: product.id, quantity: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );

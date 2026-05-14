@@ -10,7 +10,7 @@ const Home = () => {
   const [category, setCategory] = useState('All');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://shopmart-foyf.onrender.com/api/products')
       .then(res => { setProducts(res.data); setFiltered(res.data); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);

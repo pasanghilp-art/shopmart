@@ -9,7 +9,7 @@ const Register = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/register', form);
+      await axios.post('https://shopmart-foyf.onrender.com/api/auth/register', form);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Register failed');
